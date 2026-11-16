@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #87911B;
+    --color-secondary: #F5F3DF;
+    --color-hover: #687014;
+    --color-text: #30351E;
+}
+
+body {
+
+    margin: 0;
+
+    background-image: url("./assets/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+}

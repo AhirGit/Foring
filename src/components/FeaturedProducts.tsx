@@ -1,0 +1,84 @@
+import type { Product } from "../types/Product";
+
+function FeaturedProducts() {
+
+    const products: Product[] = [
+        {
+            id: 1,
+            name: "Baby Romper",
+            price: 24.99,
+            image: "/products/romper.jpg",
+            category: "Clothing"
+        },
+        {
+            id: 2,
+            name: "Baby Dress",
+            price: 29.99,
+            image: "/products/dress.jpg",
+            category: "Clothing"
+        },
+        {
+            id: 3,
+            name: "Baby Pajama Set",
+            price: 21.99,
+            image: "/products/pajama.jpg",
+            category: "Clothing"
+        },
+        {
+            id: 4,
+            name: "Baby T-Shirt Set",
+            price: 18.99,
+            image: "/products/tshirt.jpg",
+            category: "Clothing"
+        }
+    ];
+
+    return (
+        <section className="px-16 py-16">
+
+            <h2 className="mb-10 text-center text-3xl font-bold text-text">
+                Featured Products
+            </h2>
+
+            <div className="grid grid-cols-4 gap-6">
+
+                {products.map((product) => (
+                    <div
+                        key={product.id}
+                        className="overflow-hidden rounded-2xl bg-white shadow-sm"
+                    >
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            className="h-64 w-full object-cover"
+                        />
+
+                        <div className="p-5">
+
+                            <p className="mb-1 text-sm text-primary">
+                                {product.category}
+                            </p>
+
+                            <h3 className="mb-2 text-lg font-semibold text-text">
+                                {product.name}
+                            </h3>
+
+                            <p className="mb-4 font-bold text-text">
+                                ${product.price.toFixed(2)}
+                            </p>
+
+                            <button className="w-full rounded-lg bg-primary py-2 font-semibold text-white hover:bg-hover">
+                                Add to Cart
+                            </button>
+
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+
+        </section>
+    );
+}
+
+export default FeaturedProducts;
