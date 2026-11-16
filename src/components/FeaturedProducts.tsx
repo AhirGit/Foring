@@ -14,7 +14,7 @@ function FeaturedProducts() {
             id: 2,
             name: "Baby Dress",
             price: 29.99,
-            image: "${import.meta.env.BASE_URL}products/dress.jpg",
+            image: `${import.meta.env.BASE_URL}products/dress.jpg`,
             category: "Clothing"
         },
         {
@@ -34,13 +34,13 @@ function FeaturedProducts() {
     ];
 
     return (
-        <section className="px-16 py-16">
+        <section className="px-4 py-12 md:px-16 md:py-16">
 
             <h2 className="mb-10 text-center text-3xl font-bold text-text">
                 Featured Products
             </h2>
 
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
                 {products.map((product) => (
                     <div

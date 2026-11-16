@@ -2,7 +2,7 @@ import heroImage from "../assets/hero.png";
 
 function Hero() {
     return (
-        <section className="px-16 pt-10">
+        <section className="px-16 pt-15">
 
             <div className="grid grid-cols-2 items-center gap-12">
                 <div>
