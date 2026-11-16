@@ -4,24 +4,24 @@ function Categories() {
         {
             id: 1,
             name: "Clothing",
-            image: "/categories/clothing.jpg"
+            image: `${import.meta.env.BASE_URL}categories/clothing.jpg`
 
         },
         {
             id: 2,
             name: "Toys",
-            image: "/categories/toys.jpg"
+            image: `${import.meta.env.BASE_URL}categories/toys.jpg`
 
         },
         {
             id: 3,
             name: "Feeding",
-            image: "/categories/feeding.jpg"
+            image: `${import.meta.env.BASE_URL}categories/feeding.jpg`
         },
         {
             id: 4,
             name: "Accessories",
-            image: "/categories/accessories.jpg"
+            image: `${import.meta.env.BASE_URL}categories/accessories.jpg`
         }
     ];
 

@@ -7,28 +7,28 @@ function FeaturedProducts() {
             id: 1,
             name: "Baby Romper",
             price: 24.99,
-            image: "/products/romper.jpg",
+            image: `${import.meta.env.BASE_URL}products/romper.jpg`,
             category: "Clothing"
         },
         {
             id: 2,
             name: "Baby Dress",
             price: 29.99,
-            image: "/products/dress.jpg",
+            image: "${import.meta.env.BASE_URL}products/dress.jpg",
             category: "Clothing"
         },
         {
             id: 3,
             name: "Baby Pajama Set",
             price: 21.99,
-            image: "/products/pajama.jpg",
+            image: `${import.meta.env.BASE_URL}products/pajama.jpg`,
             category: "Clothing"
         },
         {
             id: 4,
             name: "Baby T-Shirt Set",
             price: 18.99,
-            image: "/products/tshirt.jpg",
+            image: `${import.meta.env.BASE_URL}products/tshirt.jpg`,
             category: "Clothing"
         }
     ];
