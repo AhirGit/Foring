@@ -1,6 +1,10 @@
 import type { Product } from "../types/Product";
 
-function FeaturedProducts() {
+type FeaturedProductsProps = {
+    addToCart: (product: Product) => void;
+};
+
+function FeaturedProducts({ addToCart }: FeaturedProductsProps) {
 
     const products: Product[] = [
         {
@@ -67,7 +71,10 @@ function FeaturedProducts() {
                                 ${product.price.toFixed(2)}
                             </p>
 
-                            <button className="w-full rounded-lg bg-primary py-2 font-semibold text-white hover:bg-hover">
+                            <button
+                                onClick={() => addToCart(product)}
+                                className="w-full rounded-lg bg-primary py-2 font-semibold text-white transition-transform active:scale-95 hover:bg-hover"
+                            >
                                 Add to Cart
                             </button>
 

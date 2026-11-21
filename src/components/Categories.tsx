@@ -3,25 +3,18 @@ function Categories() {
     const categories = [
         {
             id: 1,
-            name: "Clothing",
-            image: `${import.meta.env.BASE_URL}categories/clothing.jpg`
-
+            name: "Handmade Clothes",
+            image: `${import.meta.env.BASE_URL}categories/handmade.jpg`
         },
         {
             id: 2,
-            name: "Toys",
-            image: `${import.meta.env.BASE_URL}categories/toys.jpg`
-
+            name: "China Imported Clothes",
+            image: `${import.meta.env.BASE_URL}categories/imported.jpg`
         },
         {
             id: 3,
-            name: "Feeding",
-            image: `${import.meta.env.BASE_URL}categories/feeding.jpg`
-        },
-        {
-            id: 4,
-            name: "Accessories",
-            image: `${import.meta.env.BASE_URL}categories/accessories.jpg`
+            name: "Toys",
+            image: `${import.meta.env.BASE_URL}categories/toys.jpg`
         }
     ];
 
@@ -32,7 +25,7 @@ function Categories() {
                 Shop by Category
             </h2>
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
 
                 {categories.map((category) => (
                     <div

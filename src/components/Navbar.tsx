@@ -1,6 +1,11 @@
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+type NavbarProps = {
+    cartCount: number;
+};
+
+function Navbar({ cartCount }: NavbarProps) {
     return (
         <nav className="relative flex h-14 items-center justify-between border-b border-primary bg-white/70 px-16">
 
@@ -13,10 +18,21 @@ function Navbar() {
             <div></div>
 
             <div className="flex items-center gap-8 text-text">
-                <a className="hover:text-hover" href="/">Home</a>
-                <a className="hover:text-hover" href="/shop">Shop</a>
-                <a className="hover:text-hover" href="/about">About</a>
-                <a className="hover:text-hover" href="/cart">Cart</a>
+                <Link className="hover:text-hover" to="/">
+                    Home
+                </Link>
+
+                <Link className="hover:text-hover" to="/shop">
+                    Shop
+                </Link>
+
+                <Link className="hover:text-hover" to="/about">
+                    About
+                </Link>
+
+                <Link className="hover:text-hover" to="/cart">
+                    Cart ({cartCount})
+                </Link>
             </div>
 
         </nav>
