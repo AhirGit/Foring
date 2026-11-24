@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Categories() {
 
     const categories = [
@@ -19,7 +21,7 @@ function Categories() {
     ];
 
     return (
-        <section className="px-16">
+        <section className="px-16 py-5">
 
             <h2 className="mb-10 text-center text-3xl font-bold text-text">
                 Shop by Category
@@ -28,8 +30,9 @@ function Categories() {
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
 
                 {categories.map((category) => (
-                    <div
+                    <Link
                         key={category.id}
+                        to={`/shop?category=${encodeURIComponent(category.name)}`}
                         className="overflow-hidden rounded-2xl bg-white shadow-sm transition-transform hover:-translate-y-1 hover:scale-105"
                     >
                         <img
@@ -43,7 +46,7 @@ function Categories() {
                                 {category.name}
                             </h3>
                         </div>
-                    </div>
+                    </Link>
                 ))}
 
             </div>

@@ -2,15 +2,15 @@ import heroImage from "../assets/hero.png";
 
 function Hero() {
     return (
-        <section className="px-16 pt-15">
+        <section className="px-4 pt-15 md:px-16">
 
-            <div className="grid grid-cols-2 items-center gap-12">
+            <div className="grid grid-cols-2 items-center gap-5">
                 <div>
                     <p className="mb-3 text-sm font-semibold uppercase text-primary">
                         Made for little ones
                     </p>
 
-                    <h1 className="mb-6 text-5xl font-bold text-text">
+                    <h1 className="mb-6 text-4xl font-bold text-text">
                         Little things for
                         <br />
                         your little one.
@@ -21,7 +21,16 @@ function Hero() {
                         carefully selected for your baby.
                     </p>
 
-                    <button className="rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-hover">
+                    <button
+                        onClick={() => {
+                            document
+                                .getElementById("featured-products")
+                                ?.scrollIntoView({
+                                    behavior: "smooth"
+                                });
+                        }}
+                        className="rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-hover"
+                    >
                         Shop Now
                     </button>
                 </div>

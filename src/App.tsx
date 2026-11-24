@@ -1,12 +1,15 @@
-import './App.css'
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
+import Slideshow from "./components/Slideshow";
+import AdminLogin from "./components/AdminLogin";
+import Admin from "./components/Admin";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Cart from "./components/Cart";
+import Shop from "./components/Shop";
 
 import type { Product, CartItem } from "./types/Product";
 
@@ -80,30 +83,48 @@ function App() {
 
             <Routes>
 
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <Hero />
-                            <Categories />
-                            <FeaturedProducts addToCart={addToCart} />
-                        </>
-                    }
-                />
+              <Route
+                  path="/admin/login"
+                  element={<AdminLogin />}
+              />
 
-                <Route
-                    path="/cart"
-                    element={
-                        <Cart
-                            cart={cart}
-                            increaseQuantity={increaseQuantity}
-                            decreaseQuantity={decreaseQuantity}
-                            removeFromCart={removeFromCart}
-                        />
-                    }
-                />
+              <Route
+                  path="/admin"
+                  element={<Admin />}
+              />
 
-            </Routes>
+              <Route
+                  path="/"
+                  element={
+                      <>
+                          <Hero />
+                          <Slideshow />
+                          <Categories />
+                          <FeaturedProducts addToCart={addToCart} />
+                      </>
+                  }
+              />
+
+              <Route
+                  path="/shop"
+                  element={
+                      <Shop addToCart={addToCart} />
+                  }
+              />
+
+              <Route
+                  path="/cart"
+                  element={
+                      <Cart
+                          cart={cart}
+                          increaseQuantity={increaseQuantity}
+                          decreaseQuantity={decreaseQuantity}
+                          removeFromCart={removeFromCart}
+                      />
+                  }
+              />
+
+          </Routes>
 
         </div>
     );

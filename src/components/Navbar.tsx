@@ -7,7 +7,7 @@ type NavbarProps = {
 
 function Navbar({ cartCount }: NavbarProps) {
     return (
-        <nav className="relative flex h-14 items-center justify-between border-b border-primary bg-white/70 px-16">
+        <nav className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-primary bg-white/90 px-16 shadow-sm backdrop-blur-md">
 
             <img
                 src={logo}
