@@ -36,14 +36,14 @@ function FeaturedProducts({ addToCart }: FeaturedProductsProps) {
     return (
         <section
             id="featured-products"
-            className="px-4 py-12 md:px-16 md:py-16"
+            className="scroll-mt-20 px-4 py-8 md:px-16 md:py-16"
         >
 
-            <h2 className="mb-10 text-center text-3xl font-bold text-text">
+            <h2 className="mb-6 text-center text-2xl font-bold text-text md:mb-10 md:text-3xl">
                 Featured Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
 
                 {products.map((product) => (
                     <div
@@ -54,34 +54,34 @@ function FeaturedProducts({ addToCart }: FeaturedProductsProps) {
                         <img
                             src={product.image_url ?? ""}
                             alt={product.name}
-                            className="h-64 w-full object-cover"
+                            className="h-40 w-full object-cover sm:h-64"
                         />
 
-                        <div className="p-5">
+                        <div className="p-3 sm:p-5">
 
-                            <p className="mb-1 text-sm text-primary">
+                            <p className="mb-1 text-xs text-primary sm:text-sm">
                                 {product.category}
                             </p>
 
-                            <h3 className="mb-2 text-lg font-semibold text-text">
+                            <h3 className="mb-2 text-sm font-semibold text-text sm:text-lg">
                                 {product.name}
                             </h3>
 
-                            <p className="mb-4 font-bold text-text">
-                                ${Number(product.price).toFixed(2)}
+                            <p className="mb-3 text-sm font-bold text-text sm:mb-4 sm:text-base">
+                                ৳{Number(product.price).toLocaleString("en-BD")}
                             </p>
 
                             {product.available ? (
                                 <button
                                     onClick={() => addToCart(product)}
-                                    className="w-full rounded-lg bg-primary py-2 font-semibold text-white transition-transform hover:bg-hover active:scale-95"
+                                    className="w-full rounded-lg bg-primary px-2 py-2 text-sm font-semibold text-white transition-transform hover:bg-hover active:scale-95 sm:text-base"
                                 >
                                     Add to Cart
                                 </button>
                             ) : (
                                 <button
                                     disabled
-                                    className="w-full cursor-not-allowed rounded-lg bg-gray-300 py-2 font-semibold text-gray-500"
+                                    className="w-full cursor-not-allowed rounded-lg bg-gray-300 px-2 py-2 text-sm font-semibold text-gray-500 sm:text-base"
                                 >
                                     Out of Stock
                                 </button>

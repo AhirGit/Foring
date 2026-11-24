@@ -97,8 +97,9 @@ function App() {
                   path="/"
                   element={
                       <>
-                          <Hero />
                           <Slideshow />
+                          <Hero />
+                          
                           <Categories />
                           <FeaturedProducts addToCart={addToCart} />
                       </>

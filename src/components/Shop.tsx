@@ -57,17 +57,18 @@ function Shop({ addToCart }: ShopProps) {
     }, []);
 
     return (
-        <section className="px-4 py-12 md:px-16 md:py-16">
+        <section className="px-4 py-8 md:px-16 md:py-16">
 
-            <h1 className="mb-3 text-center text-4xl font-bold text-text">
+            <h1 className="mb-2 text-center text-3xl font-bold text-text md:text-4xl">
                 Shop
             </h1>
 
-            <p className="mb-10 text-center text-gray-600">
+            <p className="mb-6 text-center text-sm text-gray-600 md:mb-10 md:text-base">
                 Browse our collection for your little one.
             </p>
 
-            <div className="mb-10 flex flex-wrap justify-center gap-3">
+            <div className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:mb-10 
+                    md:flex-wrap md:justify-center md:gap-3 md:px-0">
 
                 {categories.map((category) => (
                     <button
@@ -85,8 +86,9 @@ function Shop({ addToCart }: ShopProps) {
                             }
 
                         }}
-                        
-                        className={`rounded-full px-5 py-2 ${
+
+                        className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm 
+                                    transition-colors md:px-5 md:text-base ${
                             selectedCategory === category
                                 ? "bg-primary text-white"
                                 : "bg-secondary text-text hover:bg-primary hover:text-white"
@@ -98,7 +100,7 @@ function Shop({ addToCart }: ShopProps) {
 
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
 
                 {filteredProducts.map((product) => (
                     <div
@@ -108,34 +110,34 @@ function Shop({ addToCart }: ShopProps) {
                         <img
                             src={product.image_url ?? ""}
                             alt={product.name}
-                            className="h-64 w-full object-cover"
+                            className="h-40 w-full object-cover sm:h-64"
                         />
 
-                        <div className="p-5">
+                        <div className="p-3 sm:p-5">
 
-                            <p className="mb-1 text-sm text-primary">
+                            <p className="mb-1 text-xs text-primary sm:text-sm">
                                 {product.category}
                             </p>
 
-                            <h2 className="mb-2 text-lg font-semibold text-text">
+                            <h2 className="mb-2 text-sm font-semibold text-text sm:text-lg">
                                 {product.name}
                             </h2>
 
-                            <p className="mb-4 font-bold text-text">
-                                ${product.price.toFixed(2)}
+                            <p className="mb-3 text-sm font-bold text-text sm:mb-4 sm:text-base">
+                                ৳{Number(product.price).toLocaleString("en-BD")}
                             </p>
 
                             {product.available ? (
                                 <button
                                     onClick={() => addToCart(product)}
-                                    className="w-full rounded-lg bg-primary px-4 py-2 font-semibold text-white hover:bg-hover"
+                                    className="w-full rounded-lg bg-primary px-2 py-2 text-sm font-semibold text-white hover:bg-hover active:scale-95 sm:px-4 sm:text-base"
                                 >
                                     Add to Cart
                                 </button>
                             ) : (
                                 <button
                                     disabled
-                                    className="w-full cursor-not-allowed rounded-lg bg-gray-300 px-4 py-2 font-semibold text-gray-500"
+                                    className="w-full cursor-not-allowed rounded-lg bg-gray-300 px-2 py-2 text-sm font-semibold text-gray-500 sm:px-4 sm:text-base"
                                 >
                                     Out of Stock
                                 </button>

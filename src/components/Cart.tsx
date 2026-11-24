@@ -59,7 +59,7 @@ function Cart({
                                         </h3>
 
                                         <p className="text-primary">
-                                            ${product.price.toFixed(2)}
+                                            ৳{Number(product.price).toLocaleString("en-BD")}
                                         </p>
 
                                         <div className="mt-2 flex items-center gap-3">
@@ -112,7 +112,7 @@ function Cart({
                             </p>
 
                             <p className="text-2xl font-bold text-primary">
-                                ${totalPrice.toFixed(2)}
+                                ৳{Number(totalPrice).toLocaleString("en-BD")}
                             </p>
 
                         </div>
